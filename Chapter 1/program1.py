@@ -12,3 +12,4 @@ print type(y)
 print type(z)
 y,x,z=3.5,6,'Example2'
 print(y,x,z)
+print(x%y)

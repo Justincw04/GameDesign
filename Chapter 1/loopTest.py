@@ -8,5 +8,16 @@ for x in numbers:
     print(x)
     if x == 3:
         break
+
+
 for x in range(1,10):
     print(x)
+
+
+for line in range(1,10):
+    print()
+
+    for space in range(9-line):
+        print(" ", end=' ')
+    for number in range(line):
+        print(line, end=' ')

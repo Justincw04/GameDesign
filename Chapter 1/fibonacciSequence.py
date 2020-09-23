@@ -1,3 +1,6 @@
+#Justin Cortez Wartell
+
+#Fibonacci Sequence
 def fib(number_of_terms):
    counter = 0
 

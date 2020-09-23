@@ -1,3 +1,6 @@
+#Justin Cortez Wartell
+
+#Backwards Loop
 begin = 5
 lines = begin
 for line in range(lines):
@@ -5,6 +8,7 @@ for line in range(lines):
         print(number, end=' ')
     print()
 
+#Prime Numbers
 start = 25
 end = 50
 
@@ -16,6 +20,7 @@ for i in range(start,end):
     else:
         print(i)
 
+#Fibonacci Sequence
 def fib(number_of_terms):
    counter = 0
 

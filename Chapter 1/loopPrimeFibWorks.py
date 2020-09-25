@@ -7,6 +7,7 @@ for line in range(lines):
     for number in range(begin-line,0,-1):
         print(number, end=' ')
     print()
+print()
 
 #Prime Numbers
 start = 25
@@ -19,6 +20,7 @@ for i in range(start,end):
             break
     else:
         print(i)
+print()
 
 #Fibonacci Sequence
 def fib(number_of_terms):

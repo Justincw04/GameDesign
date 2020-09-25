@@ -1,3 +1,6 @@
+#Justin Cortez Wartell
+
+#Playing With Loops
 begin = 5
 lines = begin
 for line in range(lines):

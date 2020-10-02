@@ -1,3 +1,4 @@
+#Justin Cortez Wartell
 x=0
 #controls where it wil finish
 #will break if number is over 10
@@ -21,7 +22,7 @@ for line in range(x,y):
 print()
 print()
 
-num=int(9)
+num=9
 for i in range(1,num+1):
           # Print leading space
           for j in range(1,num-i+1):

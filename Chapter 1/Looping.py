@@ -3,4 +3,4 @@ for line in range(1,10):
     for space in range(9-line):
         print(" ", end=' ')
     for number in range(line):
-        print(line, end=' ')
+        print("*", end=' ')

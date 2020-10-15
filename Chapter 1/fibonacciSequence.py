@@ -16,3 +16,9 @@ def fib(number_of_terms):
       counter = counter + 1
 
 fib(9)
+
+
+s=dict()
+for x in range(1,16):
+    s[x]=x**2
+print(s)

@@ -10,6 +10,10 @@ oneScore = (0)
 def main():
    menu()
 
+#putting list into file
+with open("wordFile", "w") as wordFile:
+    wordFile.write("\n".join(gameWords))
+#regular game
 def menu():
     print("************Welcome to Unscramble Game**************")
     print()
@@ -17,17 +21,27 @@ def menu():
     choice = input("""
                       A: 1 Player
                       B: 2 Players
+                      C: See leaderboard
 
                       Please enter your choice: """)
     if choice == "A" or choice =="a":
-        onePlayer()
+        oneName()
     elif choice == "B" or choice =="b":
         twoPlayer()
+    elif choice == "C" or choice =="c":
+        print(LeadFile.read())
+        leadmenu = input("""
+                        A: Back to menu
+
+                        Please enter your choice""")
+            menu()
     else:
         print("You must only select either A or B")
         print("Please try again")
         menu()
-
+def oneName():
+    name1 = input("Please write your name:")
+    onePlayer()
 def onePlayer():
     print("1 Player")
     print()
@@ -63,15 +77,21 @@ def oneWord():
         if end1 == "A" or end1 =="a":
             oneWord()
         elif end1 == "B" or end1 =="b":
-            
-            menu()
+
+            leaderboard()
         else:
             print("You must only select either A or B")
             print("Please try again")
             print(end1)
     else:
         print("try again")
-
+def leaderboard():
+    print("Before you go...")
+    date1 = input("Please enter the date")
+    LeadFile = open("newFile.txt", "w")
+    LeadFile.write("[", date1, oneName, oneScore, "]")
+    LeadFile.close()
+    menu()
 
 
 

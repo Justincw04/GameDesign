@@ -36,6 +36,8 @@ pygame.time.delay(100)
 pygame.draw.rect(screen,(10,123,10),(20,20 50,100))
 pygame.display.update()
 #we are going to move our rectangle background
+pygame.draw.circle(screen,(0,120,129), (x+100, y+100),50, 4)
+pygame.display.update()
 keyBoardKey=pygame.key.get_pressed()
 #check what key is get_pressed
 speed=1

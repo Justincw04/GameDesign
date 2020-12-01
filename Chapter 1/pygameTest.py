@@ -20,6 +20,9 @@ screen.fill(white)
 pygame.display.set_caption("My Shapes")
 pygame.display.flip()
 running = True
+
+walkRight = [pygame.image.loaf('Stripe\R1E.png')
+
 #VAriables to control objects
 x=29
 y=20
@@ -33,8 +36,25 @@ def redrawWindow():
     screen.blit(tempSprite,(x,y))
     pygame.draw.rect(screen,(10,123,10),(x,y,w,h))
     pygame.display.update()
+walkCount - 0
+def redrawGamescreendow():
+    global walkCount
 
+    screen.blit(bg, (0,0))
+    of walkCount + 1 >= 27:
+        walkCount = 0
+
+    if left:
+        screen.blit(walkLeft[walkCount//3], (x,y))
+        walkcount+= 1
+    elif right:
+        screen.blit(walkRight[walkCount//3], (x,y))
+        walkcount+= 1
+    else:
+        screen.blit(character, (x,y))
+        walkCount = 0
 while running:
+    clock.tick(27)
     #screen.fill(white)
     #Background image on the screen
 
@@ -61,6 +81,9 @@ while running:
             y += speed
         if keyBoardKey[pygame.K_SPACE]:
             Jump=True
+            left - False
+            right = False
+            walkCount = 0
     else:
         if high >= -10:
             y -= (high * abs(high)) /2

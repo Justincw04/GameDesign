@@ -1,6 +1,7 @@
 
-
+from pygame_functions import *
 import pygame
+
 pygame.init()
 WIDTH = 1920
 HEIGHT = 1080
@@ -9,10 +10,9 @@ pygame.display.set_caption("Moving Through Frames")
 
 
 
-setBackgroundImage( [  ["dungeonTile.jpg", "dungeonTile.jpg"] ,
-                       ["dungeonTile.jpg", "dungeonTile.jpg"]  ])
+bg = pygame.image.load("//Users//Justin//github//GameDesign//Chapter 1//dungeonTile.jpg")
 
-testSprite  = makeSprite("ashMoving", 20)  # links.gif contains 32 separate frames of animation.
+testSprite  = makeSprite("//Users//Justin//github//GameDesign//Chapter 1//ashMoving.gif", 20)  # links.gif contains 32 separate frames of animation.
 
 moveSprite(testSprite,300,300,True)
 showSprite(testSprite)

@@ -156,7 +156,7 @@ class newSprite(pygame.sprite.Sprite):
         self.rect.center = oldcenter
         self.mask = pygame.mask.from_surface(self.image)
         if screenRefresh:
-            updateDisplay()
+            pygame.display.update()
 
 
 class newTextBox(pygame.sprite.Sprite):
@@ -320,7 +320,7 @@ def screenSize(sizex, sizey, xpos=None, ypos=None, fullscreen=False):
 def moveSprite(sprite, x, y, centre=False):
     sprite.move(x, y, centre)
     if screenRefresh:
-        updateDisplay()
+        pygame.display.update()
 
 
 def rotateSprite(sprite, angle):
@@ -389,7 +389,7 @@ def unhideAll():
 def showSprite(sprite):
     spriteGroup.add(sprite)
     if screenRefresh:
-        updateDisplay()
+        pygame.display.update()
 
 
 def makeSprite(filename, frames=1):

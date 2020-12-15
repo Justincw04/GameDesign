@@ -19,7 +19,7 @@ RADIUS = 10
 WIDTH = 1600
 HEIGHT = 800
 run = True
-click= False
+
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Snake Game')
@@ -30,6 +30,7 @@ WORD_FONT = pygame.font.SysFont('comicsans', 60)
 TITLE_FONT = pygame.font.SysFont('comicsans', 70)
 #menu with instruction list and difficulty selector
 def menu():
+    global click
     screen.fill(white)
     text = TITLE_FONT.render("Let's Play Snake!", 1, black)
 
@@ -111,13 +112,7 @@ def menu():
     click = False
 
 
-while run:
-    menu()
-    pygame.display.update()
-    event = pygame.event.poll()
-    if event.type == pygame.QUIT:
-        run = False
-        sys.exit()
+
 pygame.time.delay(5000)
 snake_block = 10
 
@@ -173,7 +168,15 @@ def gameLoopEasy():
                         game_over = True
                         game_close = False
                     if event.key == pygame.K_c:
-                        menu()
+                        run = True
+                        while run:
+                            menu()
+                            pygame.display.update()
+                            event = pygame.event.poll()
+                            if event.type == pygame.QUIT:
+                                run = False
+                                sys.exit()
+
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -256,7 +259,14 @@ def gameLoopMedium():
                         game_over = True
                         game_close = False
                     if event.key == pygame.K_c:
-                        menu()
+                        run = True
+                        while run:
+                            menu()
+                            pygame.display.update()
+                            event = pygame.event.poll()
+                            if event.type == pygame.QUIT:
+                                run = False
+                                sys.exit()
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -279,7 +289,7 @@ def gameLoopMedium():
             game_close = True
         x1 += x1_change
         y1 += y1_change
-        screen.fill(blue)
+        screen.fill(yellow)
         pygame.draw.rect(screen, green, [foodx, foody, snake_block, snake_block])
         snake_Head = []
         snake_Head.append(x1)
@@ -338,7 +348,15 @@ def gameLoopHard():
                         game_over = True
                         game_close = False
                     if event.key == pygame.K_c:
-                        menu()
+                        run = True
+                        while run:
+                            menu()
+                            pygame.display.update()
+                            event = pygame.event.poll()
+                            if event.type == pygame.QUIT:
+                                run = False
+                                sys.exit()
+
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -361,7 +379,7 @@ def gameLoopHard():
             game_close = True
         x1 += x1_change
         y1 += y1_change
-        screen.fill(blue)
+        screen.fill(red)
         pygame.draw.rect(screen, green, [foodx, foody, snake_block, snake_block])
         snake_Head = []
         snake_Head.append(x1)
@@ -388,3 +406,11 @@ def gameLoopHard():
 
     pygame.quit()
     quit()
+
+while run:
+    menu()
+    pygame.display.update()
+    event = pygame.event.poll()
+    if event.type == pygame.QUIT:
+        run = False
+        sys.exit()
